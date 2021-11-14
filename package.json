@@ -6,6 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/jisupark123/wetube.git"
   },
+  "engines": {
+    "node": "v14.18.1",
+    "npm": "6.14.15"
+  },
   "scripts": {
     "start": "node build/init.js",
     "build": "npm run build:server && npm run build:assets",
