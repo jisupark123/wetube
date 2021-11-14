@@ -1,0 +1,21 @@
+extends base.pug
+
+block content 
+    div 
+        button#recordBtn Start Recording
+    if errorMessage 
+        span=errorMessage
+    form(method="POST" enctype="multipart/form-data")
+        div.upload-file
+            label(for="video" class="upload-file__value") 선택된 파일 없음 
+            label(for="video" class="upload-file__btn") 파일 선택
+            input(name="video" type="file" id="video" class="upload-file__input" accept="video/*" required )
+        input(name="title", placeholder="Title", required, type="text", maxlength=80)
+        input(name="description", placeholder="Description", required, type="text")
+        input(name="hashtags", placeholder="Hashtags, seperated by comma.", required, type="text")
+        input( type="submit", value="Upload Video") 
+    
+
+block scripts 
+    script(src="/assets/js/uploadFile.js") 
+    script(src="/assets/js/recorder.js") 

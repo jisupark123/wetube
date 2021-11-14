@@ -1,0 +1,20 @@
+.social-login {
+  border-top: 2px solid $bg;
+  padding-top: 30px;
+  margin: 30px auto 0 auto;
+  width: 80%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .social__btn--github {
+    font-size: 2rem;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: black;
+    text-align: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: azure;
+  }
+}

@@ -1,0 +1,29 @@
+.auth-switch {
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 1.7rem;
+  font-weight: bold;
+  span {
+    display: block;
+    margin: 20px 0;
+    color: $logo;
+  }
+  a {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
+.avatar {
+  border: 1px solid white;
+}
+.empty__message {
+  font-size: 2rem;
+}
+.video__grid {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
+}

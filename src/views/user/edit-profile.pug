@@ -1,0 +1,20 @@
+extends ../base
+
+block content 
+    if errorMessage 
+        span=errorMessage
+    img(src="/" + loggedInUser.avatarUrl, width="100", height="100", class="avatar")
+    form(method="POST" enctype="multipart/form-data" autocomplete='off')
+        div.upload-file
+            label(for="avatar" class="upload-file__value") 프로필 이미지
+            label(for="avatar" class="upload-file__btn") 파일 선택
+            input(name="avatar" id="avatar" class="upload-file__input" type="file" accept="image/*")
+        input(name="userId" type="text" placeholder="아이디" required value=loggedInUser.userId)
+        input(name="email" type="email" placeholder="이메일" required value=loggedInUser.email) 
+        input(name="location" type="text" placeholder="Location" value=loggedInUser.location)
+        input(type="submit" value="Update Profile")
+        if !loggedInUser.socialOnly
+            hr
+            a(href="change-password") Change Password &rarr; 
+
+    script(src="../../client/js/upload.js")

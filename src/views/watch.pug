@@ -1,0 +1,55 @@
+extends base.pug
+
+block content 
+    div#videoContainer(data-id=video._id)
+        video(src="/" + video.fileUrl)
+        div#videoControls.videoControls
+            div.videoControls__play
+                span#play.videoControls__playBtn
+                    i.fas.fa-play
+                div.videoControls__time
+                    span#currentTime 00:00
+                    span   /  
+                    span#totalTime 00:00 
+            input(type="range",step="1",value= 0 min="0")#timeline.videoControls__timeline
+            div.videoControls__volume
+                input(type="range",step="0.1",value= 1 min="0", max="1")#volume
+                span#mute 
+                    i.fas.fa-volume-mute
+            div.videoControls__fullScreen
+                span#fullScreen 
+                    i.fas.fa-expand
+                    
+        //- div.watch-left-box__info
+        //-     each hashtag in video.hashtags
+        //-         span.watch-left-box__hashtag=hashtag
+        //-     p.watch-left-box__title=video.title
+        //-     p.watch-left-box__date=video.createdAt  
+        //- hr
+        //- div.watch-left-box__owner-profile
+        //-     a.watch-left-box__owner-avatar(href=`/user/${video.owner._id}`)
+        //-         img(src="/" + loggedInUser.avatarUrl, width="50", height="50", class="avatar")
+        //-         p #{video.owner.userId}
+        //-     div.watch-left-box__owner-option
+        //-         if String(video.owner._id) === String(loggedInUser._id)
+        //-             a(href=`${video.id}/edit`) Edit Video &rarr; 
+        //-             a(href=`${video.id}/delete`) Delete Video &rarr;
+        //- div.watch-left-box__description
+        //-     p=video.description       
+
+    div.video__add-comments
+        form.video__comment-form#commentForm
+            textarea(cols="30", rows="10", placeholder="댓글 추가")
+            button 댓글
+    div.video__comments
+        ul 
+            each comment in video.comments.reverse()
+                li.video__comment
+                    i.fas.fa-comment 
+                    span #{comment.text}
+
+
+block scripts 
+    script(src="/assets/js/videoPlayer.js") 
+    script(src="/assets/js/commentSection.js") 
+    //- script(src="/assets/js/commentSection.js") 

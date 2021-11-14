@@ -1,0 +1,67 @@
+.watch-left-box {
+  width: 100%;
+  background-color: $cloudy-violet;
+  padding: 30px;
+  .watch-left-box__video {
+    @include flex-center;
+    margin-bottom: 20px;
+  }
+  .watch-left-box__info {
+    .watch-left-box__hashtag {
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: blue;
+    }
+    .watch-left-box__title {
+      font-size: 2.5rem;
+      margin: 10px 0 10px 0;
+    }
+    .watch-left-box__date {
+      font-size: 1.2rem;
+      opacity: 0.7;
+      margin-bottom: 30px;
+    }
+  }
+  .watch-left-box__owner-profile {
+    display: flex;
+    justify-content: space-between;
+    .watch-left-box__owner-avatar {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 20px;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+    }
+    .watch-left-box__owner-option {
+      a {
+        color: blue;
+        font-size: 1.5rem;
+        margin-right: 5px;
+      }
+    }
+  }
+  .watch-left-box__description {
+    margin-left: 70px;
+    font-size: 1.6rem;
+  }
+}
+
+.video__comments {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  width: 100%;
+  margin: 10px auto;
+
+  .video__comment {
+    padding: 10px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+    background-color: $cloudy-violet;
+    color: black;
+  }
+}
