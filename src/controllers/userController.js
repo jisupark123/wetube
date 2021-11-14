@@ -163,11 +163,10 @@ export const postEdit = async (req, res) => {
       errorMessage: "이미 존재하는 Email입니다",
     });
   }
-
   const updatedUser = await User.findByIdAndUpdate(
     _id,
     {
-      avatarUrl: file ? file.path : avatarUrl,
+      avatarUrl: file ? file.location : avatarUrl,
       name,
       email,
       userId,
