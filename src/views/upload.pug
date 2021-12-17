@@ -1,10 +1,8 @@
 extends base.pug
 
 block content 
-    div 
-        button#recordBtn Start Recording
     if errorMessage 
-        span=errorMessage
+        span.error-message=errorMessage
     form(method="POST" enctype="multipart/form-data")
         div.upload-file
             label(for="video" class="upload-file__value") 선택된 파일 없음 
@@ -18,4 +16,3 @@ block content
 
 block scripts 
     script(src="/assets/js/uploadFile.js") 
-    script(src="/assets/js/recorder.js") 

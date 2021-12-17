@@ -27,3 +27,10 @@
   gap: 50px;
   grid-template-columns: repeat(4, 1fr);
 }
+.error-message {
+  display: block;
+  margin: 30px auto;
+  color: red;
+  text-align: center;
+  font-size: 1.5rem;
+}
