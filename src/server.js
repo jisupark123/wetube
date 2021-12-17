@@ -26,7 +26,7 @@ app.use(
       maxAge: 14 * 24 * 60 * 60 * 1000,
     },
     store: MongoStore.create({
-      mongoUrl: isHeroku ? process.env.DB_URL : 'mongodb://127.0.0.1:27017',
+      mongoUrl: process.env.DB_URL,
     }),
   })
 );
